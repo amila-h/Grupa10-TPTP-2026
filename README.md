@@ -1,12 +1,12 @@
 # Grupa10-TPTP-2026
 
-<br>**Naziv projekta**: Naziv projekta
-<br>**Tema**: Tema
+<br>**Naziv projekta**: Završni projekat
+<br>**Tema**: Web stranica za informacije o filmovima
 
 <br>**Članovi**:
-<br>-(Ime, Prezime, GitHub username)
-<br>-(Ime, Prezime, GitHub username)
-<br>-(Ime, Prezime, GitHub username)
+<br>-Amila Ramić, GitHub username: 
+<br>-Amer Hadžikić, GitHub username: 
+<br>-Amila Humčaković, Github username: amila-h
 
 <br>**Opis**:
-<br>Opis
+<br>Web stranica za informacije o filmovima. <br>Korisnik može pogledati koji filmovi su popularni danas, informacije o filmovima (godina proizvodnje, žanr, zemlja porijekla, koliko dugo film traje, osobe koje imaju veze sa filmom, ...) 
