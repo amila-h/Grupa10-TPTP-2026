@@ -55,3 +55,18 @@ header{
     box-shadow: 0 0 30px var(--primary-color);
 }
 
+.movie-card {
+    width: 230px; 
+}
+
+.movie-card img {
+    width: 100%;  
+    height: 300px; 
+    object-fit: cover; 
+}
+
+.movie-slider {
+    display: flex;
+    gap: 10px;    
+    overflow-x: auto; 
+}
