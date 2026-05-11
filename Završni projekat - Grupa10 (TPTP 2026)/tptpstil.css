@@ -70,3 +70,17 @@ header{
     gap: 10px;    
     overflow-x: auto; 
 }
+
+.DodatanPopupFilma {
+/*Ovdje treba dodati da pozadina ispod pop up-a bude malo drugačija (npr. tamnija), ali nije nužno*/
+}
+
+.PopupSadrzaj {
+/*Izgled pop up-a, odnosno pravokuntika ili nekog drugog oblika*/
+}
+.PopupPodaci {
+/*Izgled za tekst/podatke unutar pop up-a*/
+}
+
+
+
