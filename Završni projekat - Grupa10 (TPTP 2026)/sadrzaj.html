@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./tptpstil.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Filmoteka</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="./Fotografije za projekat/Ikona_Filmoteka.png" style="width:190px;">
+        </a>
+
+        <ul class="nav">
+            <li>
+                <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            </li>
+
+            <li><a href="sadrzaj.html">Filmoteka</a></li>
+            <li><a href="index.html">Preporuke</a></li>
+            <li><a href="#">Novo</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="#">GitHub</a></li>
+        </ul>
+     <div class="search">
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-search"></i>
+        </div>
+
+     <div class="side-menu" id="sideMenu">
+
+            <a href="#"><i class="fa-solid fa-house"></i> Početna</a>
+            <a href="#">Popularno</a>
+            <a href="#">Filmoteka</a>
+            <a href="#">Otkrij novo</a>
+            
+
+     </div>
+
+<div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+     </header>
+
+     <div class="filter-bar">
+
+    <button class="filter-btn active" data-filter="all">Sve</button>
+
+    <button class="filter-btn" data-filter="akcija">Akcija</button>
+
+    <button class="filter-btn" data-filter="drama">Drama</button>
+
+    <button class="filter-btn" data-filter="horror">Horror</button>
+
+    <button class="filter-btn" data-filter="animirani filmovi">Animirani filmovi</button>
+
+    <button class="filter-btn" data-filter="biografija">Biografija</button>
+
+    <button class="filter-btn" data-filter="dokumentarni">Dokumentarni</button>
+
+    <button class="filter-btn" data-filter="domaća kinematografija">Domaća kinematografija</button>
+
+    <button class="filter-btn" data-filter="fantazija">Fantazija</button>
+
+    <button class="filter-btn" data-filter="komedija">Komedija</button>
+
+    <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+
+    <button class="filter-btn" data-filter="porodični">Porodični</button>
+
+    <button class="filter-btn" data-filter="superheroji">Superheroji</button>
+
+    <button class="filter-btn" data-filter="triler">Triler</button>
+
+</div>
+
+     <div class="movies-grid">
+
+    <div class="film-card" data-category="Biografija">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.jpg">
+        <h3>Oppenheimer</h3>
+    </div>
+
+    <div class="film-card" data-category="akcija">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Akcija/fastx.jpg">
+        <h3>Fast X</h3>
+    </div>
+
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="./tptpskripte.js"></script>
+
+</body>
+</html>
 
