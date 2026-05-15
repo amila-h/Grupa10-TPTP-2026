@@ -102,26 +102,52 @@
             <h3 class="title">Kontakt forma</h3>
             <div class="input-container">
               <input type="text" name="name" class="input" />
-              <label for="">Ime i Prezime</label>
-              <span>Ime i Prezime</span>
+              <label for="">Ime</label>
+              <span class="err-msg" id="imeErr">Unesite vaše ime.</span>
+            </div>
+            <div class="input-container">
+              <input type="text" name="surname" class="input" />
+              <label for="">Prezime</label>
+              <span class="err-msg" id="prezimeErr">Unesite vaše prezime.</span>
             </div>
             <div class="input-container">
               <input type="email" name="email" class="input" />
               <label for="">Email</label>
-              <span>Email</span>
+              <span class="err-msg" id="emailErr">Unesite vašu e-mail adresu.</span>
             </div>
             <div class="input-container">
               <input type="tel" name="phone" class="input" />
               <label for="">Telefon</label>
-              <span>Telefon</span>
+              <span class="err-msg" id="phoneErr">Unesite vaš broj telefona.</span>
             </div>
+             <div class="field">
+        <label for="tema">Tema upita</label>
+        <div class="select-wrap">
+          <select id="tema" name="tema">
+            <option value="" disabled selected>Odaberite temu...</option>
+            <option value="opci">Opći upit</option>
+            <option value="podrska">Tehnička podrška</option>
+            <option value="reklamacija">Reklamacija</option>
+            <option value="saradnja">Poslovna saradnja</option>
+            <option value="ponuda">Zahtjev za ponudu</option>
+            <option value="ostalo">Ostalo</option>
+          </select>
+        </div>
+        <span class="err-msg" id="temaErr">Molimo odaberite temu upita.</span>
+      </div>
             <div class="input-container textarea">
               <textarea name="message" class="input"></textarea>
               <label for="">Poruka</label>
-              <span>Poruka</span>
+              <span class="err-msg" id="porukaErr">Poruka mora imati najmanje 10 znakova.</span>
             </div>
-            <input type="submit" value="Send" class="btn" />
+             <div class="buttons">
+        <button type="button" id="btnReset">Poništi</button>
+        <button type="submit" id="btnSubmit">Pošaljite poruku</button>
+      </div>
           </form>
+         
+          <div id="successMsg"></div>
+
         </div>
       </div>
     </div>
