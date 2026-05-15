@@ -135,19 +135,73 @@ header{
 
 
 .movie-card {
-    width: 230px; 
+    width: 230px;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .movie-card img {
     width: 100%;  
-    height: 300px; 
+    height: 100%; 
     object-fit: cover; 
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px var(--primary-color);
 }
 
 .movie-slider {
     display: flex;
-    gap: 10px;    
-    overflow-x: auto; 
+    gap: 20px;    
+    overflow-x: scroll; 
+    padding: 20px;
+    width: 800px;
+    scroll-behavior: smooth;
+}
+
+.movie-slider::-webkit-scrollbar {
+    display: none; 
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-btn{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.slide-btn:hover{
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left{
+    left: 10px;
+}
+
+.right{
+    right: 10px;
 }
 
 .DodatanPopupFilma {
