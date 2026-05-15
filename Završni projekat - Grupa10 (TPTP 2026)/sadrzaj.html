@@ -12,6 +12,17 @@
 </head>
 <body>
 
+    <div id="vrh"></div>
+
+    <nav class="bookmark-nav" aria-label="Bookmark navigacija">
+    <a href="#vrh"            title="Vrh stranice"><i class="fa-solid fa-house"></i></a>
+    <a href="#sec-filmoteka"  title="Filmoteka"><i class="fa-solid fa-film"></i></a>
+    <a href="#sec-tabela"     title="Tabela"><i class="fa-solid fa-table"></i></a>
+    <a href="#sec-galerija"   title="Galerija"><i class="fa-solid fa-images"></i></a>
+    <a href="#sec-mapa"       title="Image map"><i class="fa-solid fa-map"></i></a>
+    <a href="#sec-lista"      title="Lista žanrova"><i class="fa-solid fa-list"></i></a>
+</nav>
+
     <header>
         <a href="index.html" class="logo"><img src="./Fotografije za projekat/Ikona_Filmoteka.png" style="width:190px;">
         </a>
@@ -82,17 +93,225 @@
 
      <div class="movies-grid">
 
-    <div class="film-card" data-category="Biografija">
-        <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.jpg">
-        <h3>Oppenheimer</h3>
+     <div class="film-card" data-category="akcija" data-id="fastx">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Akcija/fastx.jpg" alt="Fast X poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Fast X</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 5.8</span><span>2023</span><span>2h 21m</span></div><span class="film-card-genre">Akcija</span></div>
+    </div>
+    
+    <div class="film-card" data-category="akcija" data-id="fastandfurious">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Akcija/The_Fast_and_the_Furious(Brzi_i_Žestoki).jpg" alt="The Fast and the Furious poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>The Fast and the Furious</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.8</span><span>2001</span><span>1h 46m</span></div><span class="film-card-genre">Akcija</span></div>
+    </div>
+    
+    <div class="film-card" data-category="akcija" data-id="igregladii">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Akcija/The_Hunger_Games(Igre_Gladi).jpg" alt="Igre gladi poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Igre gladi</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.2</span><span>2012</span><span>2h 22m</span></div><span class="film-card-genre">Akcija</span></div>
     </div>
 
-    <div class="film-card" data-category="akcija">
-        <img src="./Fotografije za projekat/Filmovi - posteri/Akcija/fastx.jpg">
-        <h3>Fast X</h3>
+     <div class="film-card" data-category="animirani" data-id="beemovie">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Animirani filmovi/Bee_Movie(Pčelin_Film).jpg" alt="Bee Movie poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Bee Movie</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.1</span><span>2007</span><span>1h 35m</span></div><span class="film-card-genre">Animirani</span></div>
+    </div>
+
+    <div class="film-card" data-category="animirani" data-id="findingnemo">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Animirani filmovi/Finding_Nemo(Potraga_za_Nemom).jpg" alt="Finding Nemo poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Finding Nemo</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.1</span><span>2003</span><span>1h 40m</span></div><span class="film-card-genre">Animirani</span></div>
+    </div>
+
+    <div class="film-card" data-category="animirani" data-id="frozen">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Animirani filmovi/Frozen(Snježno_Kraljevstvo).jpg" alt="Frozen poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Frozen</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.4</span><span>2013</span><span>1h 42m</span></div><span class="film-card-genre">Animirani</span></div>
+    </div>
+
+    <div class="film-card" data-category="biografija" data-id="oppenheimer">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.jpg" alt="Oppenheimer poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Oppenheimer</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.9</span><span>2023</span><span>3h 0m</span></div><span class="film-card-genre">Biografija</span></div>
+    </div>
+
+    <div class="film-card" data-category="biografija" data-id="bohemian">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/Bohemian_Rhapsody.jpg" alt="Bohemian Rhapsody poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Bohemian Rhapsody</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.9</span><span>2018</span><span>2h 14m</span></div><span class="film-card-genre">Biografija</span></div>
+    </div>
+
+     <div class="film-card" data-category="biografija" data-id="theoryofeverything">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/The_Theory_of_Everything(Teorija_Svega).jpg" alt="The Theory of Everything poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>The Theory of Everything</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.7</span><span>2014</span><span>2h 3m</span></div><span class="film-card-genre">Biografija</span></div>
+    </div>
+
+     <div class="film-card" data-category="dokumentarni" data-id="apollo11">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Dokumentarac/Apollo_11.jpg" alt="Apollo 11 poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Apollo 11</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.1</span><span>2019</span><span>1h 33m</span></div><span class="film-card-genre">Dokumentarni</span></div>
+    </div>
+
+    <div class="film-card" data-category="dokumentarni" data-id="manonwire">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Dokumentarac/Man_on_Wire(Čovjek_Na_Žici).jpg" alt="Man on Wire poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Man on Wire</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.7</span><span>2008</span><span>1h 34m</span></div><span class="film-card-genre">Dokumentarni</span></div>
+    </div>
+
+    <div class="film-card" data-category="domaca" data-id="drazen">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Domaća kinematografija/Dražen.jpg" alt="Dražen poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Dražen</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.5</span><span>2023</span><span>1h 58m</span></div><span class="film-card-genre">Domaća</span></div>
+    </div>
+
+    <div class="film-card" data-category="domaca" data-id="kototamopeva">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Domaća kinematografija/Ko_To_Tamo_Peva.jpg" alt="Ko to tamo peva poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Ko to tamo peva</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.1</span><span>1980</span><span>1h 26m</span></div><span class="film-card-genre">Domaća</span></div>
+    </div>
+
+    <div class="film-card" data-category="domaca" data-id="teskojebiti">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Domaća kinematografija/Teško_Je_Biti_Fin.jpg" alt="Teško je biti fin poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Teško je biti fin</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.2</span><span>2007</span><span>1h 32m</span></div><span class="film-card-genre">Domaća</span></div>
+    </div>
+
+    <div class="film-card" data-category="domaca" data-id="vlakusnijegu">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Domaća kinematografija/Vlak_U_Snijegu.jpg" alt="Vlak u snijegu poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Vlak u snijegu</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.8</span><span>1976</span><span>1h 22m</span></div><span class="film-card-genre">Domaća</span></div>
+    </div>
+
+    <div class="film-card" data-category="drama" data-id="forrestgump">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Drama/Forrest_Gump.jpg" alt="Forrest Gump poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Forrest Gump</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.8</span><span>1994</span><span>2h 22m</span></div><span class="film-card-genre">Drama</span></div>
+    </div>
+
+     <div class="film-card" data-category="drama" data-id="wonder">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Drama/Wonder(Čudo).jpg" alt="Wonder poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Wonder</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.0</span><span>2017</span><span>1h 53m</span></div><span class="film-card-genre">Drama</span></div>
+    </div>
+
+    <div class="film-card" data-category="fantazija" data-id="alisa">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Fantazija/Alice_in_Wonderland(Alisa_U_Zemlji_Čuda).jpg" alt="Alisa u zemlji čudesa poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Alisa u zemlji čudesa</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.5</span><span>2010</span><span>1h 48m</span></div><span class="film-card-genre">Fantazija</span></div>
+    </div>
+
+    <div class="film-card" data-category="fantazija" data-id="harrypotter">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Fantazija/Harry_Potter_and_the_Philosopher's_Stone(Harry_Potter_i_Kamen_Mudraca).jpg" alt="Harry Potter poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Harry Potter: Kamen mudraca</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.6</span><span>2001</span><span>2h 32m</span></div><span class="film-card-genre">Fantazija</span></div>
+    </div>
+
+     <div class="film-card" data-category="fantazija" data-id="pirati">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Fantazija/Pirates_of_the_Caribbean_The_Curse_of_the_Black_Pearl(Pirati_Sa_Kariba_Prokletstvo_Crnog_Bisera).jpg" alt="Pirati sa Kariba poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Pirati sa Kariba</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.0</span><span>2003</span><span>2h 23m</span></div><span class="film-card-genre">Fantazija</span></div>
+    </div>
+
+    <div class="film-card" data-category="horror" data-id="it">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Horror/It.jpg" alt="IT poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>IT</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.3</span><span>2017</span><span>2h 15m</span></div><span class="film-card-genre">Horror</span></div>
+    </div>
+
+    <div class="film-card" data-category="horror" data-id="scream">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Horror/Scream(Vrisak).jpg" alt="Scream poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Scream</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.3</span><span>1996</span><span>1h 51m</span></div><span class="film-card-genre">Horror</span></div>
+    </div>
+
+     <div class="film-card" data-category="komedija" data-id="bebindanugradu">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Komedija/Baby's_Day_Out(Bebin_Dan_u_Gradu).jpg" alt="Bebin dan u gradu poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Bebin dan u gradu</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.3</span><span>2004</span><span>1h 36m</span></div><span class="film-card-genre">Komedija</span></div>
+    </div>
+
+    <div class="film-card" data-category="komedija" data-id="kucadebele">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Komedija/Big_Momma's_House(Kuća_Debele_Mame).jpg" alt="Kuća debele mame poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Kuća debele mame</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 5.9</span><span>2000</span><span>1h 39m</span></div><span class="film-card-genre">Komedija</span></div>
+    </div>
+
+    <div class="film-card" data-category="komedija" data-id="plavusa">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Komedija/Legally_Blonde(Plavuša_s_Harvarda).jpg" alt="Plavuša sa Harvarda poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Plavuša sa Harvarda</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.8</span><span>2001</span><span>1h 36m</span></div><span class="film-card-genre">Komedija</span></div>
+    </div>
+
+    <div class="film-card" data-category="sci-fi" data-id="avatar">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Naučna fantastika (Sci-Fi) i Avantura/Avatar.jpg" alt="Avatar poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Avatar</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.9</span><span>2009</span><span>2h 42m</span></div><span class="film-card-genre">Sci-Fi</span></div>
+    </div>
+
+     <div class="film-card" data-category="sci-fi" data-id="interstellar">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Naučna fantastika (Sci-Fi) i Avantura/Interstellar(Međuzvjezdani).jpg" alt="Interstellar poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Interstellar</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.7</span><span>2014</span><span>2h 49m</span></div><span class="film-card-genre">Sci-Fi</span></div>
+    </div>
+
+     <div class="film-card" data-category="porodični" data-id="samukuci">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Porodični/Home_Alone(Sam_u_Kući).jpg" alt="Sam u kući poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Sam u kući</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.7</span><span>1990</span><span>1h 43m</span></div><span class="film-card-genre">Porodični</span></div>
+    </div>
+
+     <div class="film-card" data-category="porodični" data-id="herbie">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Porodični/Herbie_Fully_Loaded(Herbie_Punom_Brzinom).jpg" alt="Herbie Punom brzinom poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Herbie Punom brzinom</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 5.6</span><span>2005</span><span>1h 41m</span></div><span class="film-card-genre">Porodični</span></div>
+    </div>
+
+    <div class="film-card" data-category="superheroji" data-id="ironman">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Superheroji/Iron_Man.jpg" alt="Iron Man poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Iron Man</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.9</span><span>2008</span><span>2h 6m</span></div><span class="film-card-genre">Superheroji</span></div>
+    </div>
+
+    <div class="film-card" data-category="superheroji" data-id="spiderman">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Superheroji/Spider_Man.jpg" alt="Spider-Man poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Spider-Man</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.3</span><span>2002</span><span>2h 1m</span></div><span class="film-card-genre">Superheroji</span></div>
+    </div>
+
+    <div class="film-card" data-category="superheroji" data-id="superman">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Superheroji/Superman.jpg" alt="Superman poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Superman</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.3</span><span>1978</span><span>2h 23m</span></div><span class="film-card-genre">Superheroji</span></div>
+    </div>
+
+    <div class="film-card" data-category="triler" data-id="joker">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Triler/Joker.jpg" alt="Joker poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Joker</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 8.4</span><span>2019</span><span>2h 2m</span></div><span class="film-card-genre">Triler</span></div>
+    </div>
+
+    <div class="film-card" data-category="triler" data-id="majstoriiluzije">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Triler/Now_You_See_Me(Majstori_Iluzije).jpg" alt="Majstori iluzije poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Majstori iluzije</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.3</span><span>2013</span><span>1h 55m</span></div><span class="film-card-genre">Triler</span></div>
+    </div>
+
+     <div class="film-card" data-category="triler" data-id="oceanovihosam">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Triler/Ocean's_Eight(Oceanovih_Osam).jpg" alt="Oceanovih osam poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>Oceanovih osam</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 6.8</span><span>2018</span><span>1h 50m</span></div><span class="film-card-genre">Triler</span></div>
+    </div>
+
+     <div class="film-card" data-category="triler" data-id="themenu">
+        <img src="./Fotografije za projekat/Filmovi - posteri/Triler/The_Menu(Meni).jpg" alt="The Menu poster">
+        <div class="film-card-overlay"><span><i class="fa-solid fa-circle-info"></i> Detalji</span></div>
+        <div class="film-card-info"><h3>The Menu</h3><div class="film-card-meta"><span class="rating"><i class="fa-solid fa-star"></i> 7.2</span><span>2022</span><span>1h 47m</span></div><span class="film-card-genre">Triler</span></div>
     </div>
 
 </div>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
