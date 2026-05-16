@@ -405,6 +405,79 @@
 
 </div>
 
+<div id="sec-mapa" class="section-wrap" style="padding-top:10px;">
+    <h2 class="section-heading"><i class="fa-solid fa-map-location-dot"></i>Kino doživljaj — klikabilna mapa</h2>
+    <p>
+        <i class="fa-solid fa-hand-pointer"></i>
+        Klikni na predmet da saznaš više — biti ćeš preusmjeren na vanjski sajt (Wikipedia)
+    </p>
+ 
+    <div class="imagemap-wrap" id="kinoMapWrap">
+        <img src="./Fotografije za projekat/imagemap.jpg"
+             alt="Kino doživljaj — kokice, Cola i ulaznice"
+             usemap="#kinomap"
+             id="kinoImg">
+
+             <div class="kino-wrapper">
+
+    <div class="kino-zone zone-popcorn" data-type="popcorn"></div>
+    <div class="kino-zone zone-cola" data-type="cola"></div>
+    <div class="kino-zone zone-karte" data-type="karte"></div>
+
+</div>
+
+<map name="kinomap">
+    <area shape="rect" coords="113,22,383,481" alt="Kokice" href="#" data-type="popcorn">
+    <area shape="rect" coords="386,44,539,379" alt="Cola" href="#" data-type="cola">
+    <area shape="rect" coords="426,379,547,488" alt="Karte" href="#" data-type="karte">
+</map>
+
+<a href="#vrh" class="back-to-top">
+    <i class="fa-solid fa-arrow-up"></i> Skoči na vrh
+</a>
+
+<div class="kino-tooltip" id="kinoTooltip">
+    <span class="kino-tooltip-icon"  id="kinoTipIcon"></span>
+    <div class="kino-tooltip-title"  id="kinoTipTitle"></div>
+    <div class="kino-tooltip-desc"   id="kinoTipDesc"></div>
+    <div class="kino-tooltip-warn">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        Odvest će te na vanjski sajt (Wikipedia)
+    </div>
+</div>
+
+<div class="kino-modal-backdrop" id="kinoModal">
+    <div class="kino-modal-box">
+        
+        <span class="km-emoji" id="kinoModalEmoji"></span>
+        <h3 id="kinoModalTitle"></h3>
+        <p id="kinoModalDesc"></p>
+
+        <a class="kino-modal-url"
+           id="kinoModalUrl"
+           target="_blank"
+           rel="noopener noreferrer"></a>
+
+        <div class="kino-modal-warn">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Napuštaš Filmoteku i odlaziš na vanjski sajt
+        </div>
+
+        <div class="kino-modal-btns">
+            <button class="kino-btn kino-btn-cancel" id="kinoCloseBtn">
+                Odustani
+            </button>
+
+            <button class="kino-btn kino-btn-go" id="kinoGoBtn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Idi na Wikipedia
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
 <div id="sec-lista" class="section-wrap">
     <h2 class="section-heading"><i class="fa-solid fa-layer-group"></i>Žanrovi i filmovi</h2>
     <ul class="nested-list">
