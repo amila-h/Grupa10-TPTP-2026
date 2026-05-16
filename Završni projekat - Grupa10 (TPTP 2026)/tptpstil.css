@@ -19,13 +19,15 @@ header{
     position: fixed;
     top: 0;
     left: 0;
+    margin: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px;
+    padding: 30px 80px;
     z-index: 1000;
     transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .logo{
@@ -393,7 +395,7 @@ aside{
     gap: 20px;    
     overflow-x: auto; 
     padding: 20px;
-    width: 800px;
+    width: 100%;
     scroll-behavior: smooth;
 }
 
@@ -424,7 +426,7 @@ aside{
     color: white;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s ease, background 0.3s ease;
     z-index: 10;
     border-radius: 50%;
 }
@@ -465,6 +467,53 @@ aside{
 
 }
 
+.side-menu{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.4s ease;
+    z-index: 999;
+}
+
+.side-menu.active{
+    left: 0;
+}
+
+.side-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.side-menu a:hover{
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.menu-toggle{
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover{
+    color: var(--primary-color);
+}
+
 .sci a:hover{
     color: var(--primary-color);
 }
@@ -480,5 +529,130 @@ aside{
 /*Izgled za tekst/podatke unutar pop up-a*/
 }
 
+/*Sadrzaj.html*/
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px 100px;
+}
+
+.film-card {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.film-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.5s ease;
+}
 
 
+.film-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 50px rgba(255, 0, 0, 0.4);
+}
+
+
+
+.film-card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.film-card:hover .film-card-overlay {
+    opacity: 1;
+}
+
+.film-card-overlay span {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.film-card-info {
+    padding: 15px;
+    background: #202020;
+}
+
+.film-card-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    color: #f8f8f8;
+}
+
+.film-card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #a1a1a1;
+    margin-bottom: 8px;
+}
+
+.film-card-meta .rating {
+    color: #f39c12; 
+    font-weight: 600;
+}
+
+.film-card-genre {
+    display: inline-block;
+    font-size: 11px;
+    background: rgba(255,255,255,0.1);
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #a1a1a1;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 120px 40px 30px; /* Veliki top padding da ne upadne pod fiksni header */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background: var(--primary-color); /* Tvoja crvena boja */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
