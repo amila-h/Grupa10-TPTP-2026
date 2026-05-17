@@ -1835,251 +1835,251 @@ aside{
     display: block;
 }
 
-body.light-mode #theme-icon {
+body.svijetliNacin #theme-icon {
     display: none;
 }
 
-body.light-mode #theme-icon-light {
+body.svijetliNacin #theme-icon-light {
     display: block;
 }
 
-body.light-mode {
+body.svijetliNacin {
     background-color: #f0f0f0;
     color: #111;
 }
 
 
-body.light-mode .nav li a {
+body.svijetliNacin .nav li a {
     color: #111;
 }
 
-body.light-mode .search input {
+body.svijetliNacin .search input {
     color: #111;
     border-color: rgba(0, 0, 0, 0.3);
 }
 
-body.light-mode .search input::placeholder {
+body.svijetliNacin .search input::placeholder {
     color: #555;
 }
 
-body.light-mode .banner::before {
+body.svijetliNacin .banner::before {
     background: rgba(255, 255, 255, 0.3);
 }
 
-body.light-mode .banner .content p {
+body.svijetliNacin .banner .content p {
     color: #111;
 }
 
-body.light-mode .banner .content h4 {
+body.svijetliNacin .banner .content h4 {
     color: rgba(0, 0, 0, 0.7);
 }
 
-body.light-mode .banner .content span {
+body.svijetliNacin .banner .content span {
     border-color: rgba(0, 0, 0, 0.3);
 }
 
-body.light-mode .film-card {
+body.svijetliNacin .film-card {
     background: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-body.light-mode .film-card-info {
+body.svijetliNacin .film-card-info {
     background: #f5f5f5;
 }
 
-body.light-mode .film-card-info h3 {
+body.svijetliNacin .film-card-info h3 {
     color: #111;
 }
 
-body.light-mode .film-card-meta {
+body.svijetliNacin .film-card-meta {
     color: #555;
 }
 
-body.light-mode .film-card-genre {
+body.svijetliNacin .film-card-genre {
     background: rgba(0,0,0,0.08);
     color: #444;
 }
 
-body.light-mode .filter-bar {
+body.svijetliNacin .filter-bar {
     background: linear-gradient(to bottom, rgba(240,240,240,0.95), transparent);
 }
 
-body.light-mode .filter-btn {
+body.svijetliNacin .filter-btn {
     background: rgba(0, 0, 0, 0.08);
     color: #111;
     border-color: rgba(0,0,0,0.15);
 }
 
-body.light-mode .section-heading {
+body.svijetliNacin .section-heading {
     color: #111;
 }
 
-body.light-mode .film-table {
+body.svijetliNacin .film-table {
     background: rgba(255,255,255,0.8);
     color: #333;
 }
 
-body.light-mode .film-table th {
+body.svijetliNacin .film-table th {
     background: rgba(0,0,0,0.08);
     color: #111;
 }
 
-body.light-mode .film-table td {
+body.svijetliNacin .film-table td {
     color: #333;
 }
 
-body.light-mode .nested-list > li {
+body.svijetliNacin .nested-list > li {
     background: rgba(0,0,0,0.03);
     border-color: rgba(0,0,0,0.08);
 }
 
-body.light-mode .nested-list > li > span {
+body.svijetliNacin .nested-list > li > span {
     color: #111;
 }
 
-body.light-mode .nested-list ul li {
+body.svijetliNacin .nested-list ul li {
     color: #333;
 }
 
-body.light-mode .nested-list ul ul li {
+body.svijetliNacin .nested-list ul ul li {
     color: #555;
 }
 
-body.light-mode .footer {
+body.svijetliNacin .footer {
     background: #e0e0e0;
     border-top-color: rgba(0,0,0,0.1);
 }
 
-body.light-mode .footer p {
+body.svijetliNacin .footer p {
     color: #444;
 }
 
-body.light-mode .footer-authors {
+body.svijetliNacin .footer-authors {
     color: #333;
 }
 
-body.light-mode .footer-socials a {
+body.svijetliNacin .footer-socials a {
     background: #ccc;
     color: #111;
 }
 
-body.light-mode .side-menu {
+body.svijetliNacin .side-menu {
     background: rgba(240,240,240,0.98);
 }
 
-body.light-mode .side-menu a {
+body.svijetliNacin .side-menu a {
     color: #111;
 }
 
-body.light-mode .PopupSadrzaj,
-body.light-mode #popup-sadrzajweb-pravokutnik {
+body.svijetliNacin .PopupSadrzaj,
+body.svijetliNacin #popup-sadrzajweb-pravokutnik {
     background: #fff;
     color: #111;
     border-color: rgba(0,0,0,0.1);
 }
 
-body.light-mode .PopupPodaci {
+body.svijetliNacin .PopupPodaci {
     color: #444;
 }
 
-body.light-mode #DuziOpisFilma,
-body.light-mode #popup-sadrzajweb-pravokutnik [data-sinopsis] {
+body.svijetliNacin #DuziOpisFilma,
+body.svijetliNacin #popup-sadrzajweb-pravokutnik [data-sinopsis] {
     color: #333;
 }
 
-body.light-mode .kino-modal-box {
+body.svijetliNacin .kino-modal-box {
     background: #fff;
     color: #111;
 }
 
-body.light-mode .kino-modal-box p {
+body.svijetliNacin .kino-modal-box p {
     color: #444;
 }
 
-body.light-mode #video-toggle {
+body.svijetliNacin #video-toggle {
     background: rgba(0,0,0,0.08);
     color: #111;
     border-color: rgba(0,0,0,0.15);
 }
 
-body.light-mode .premijera-sekcija::before {
+body.svijetliNacin .premijera-sekcija::before {
     background: rgba(255,255,255,0.4);
 }
 
-body.light-mode .back-to-top {
+body.svijetliNacin .back-to-top {
     color: #555;
 }
 
-body.light-mode .bookmark-nav a {
+body.svijetliNacin .bookmark-nav a {
     background: rgba(0,0,0,0.08);
     color: #333;
     border-color: rgba(0,0,0,0.1);
 }
 
-body.light-mode .container {
+body.svijetliNacin .container {
     background-color: #f0f0f0;
 }
 
-body.light-mode .form {
+body.svijetliNacin .form {
     background: #fff;
     border-color: rgba(0,0,0,0.1);
 }
 
-body.light-mode .contact-info {
+body.svijetliNacin .contact-info {
     background: linear-gradient(135deg, #8b0000, #cc0000);
 }
 
-body.light-mode .contact-info .title {
+body.svijetliNacin .contact-info .title {
     color: #fff;
 }
 
-body.light-mode .contact-info .text {
+body.svijetliNacin .contact-info .text {
     color: rgba(255,255,255,0.85);
 }
 
-body.light-mode .information p {
+body.svijetliNacin .information p {
     color: rgba(255,255,255,0.9);
 }
 
-body.light-mode .contact-form {
+body.svijetliNacin .contact-form {
     background: #f5f5f5;
 }
 
-body.light-mode .contact-form .title {
+body.svijetliNacin .contact-form .title {
     color: #111;
 }
 
-body.light-mode .input-container .input {
+body.svijetliNacin .input-container .input {
     color: #111;
     border-bottom-color: rgba(0,0,0,0.25);
 }
 
-body.light-mode .input-container label {
+body.svijetliNacin .input-container label {
     color: #555;
 }
 
-body.light-mode .select-wrap select {
+body.svijetliNacin .select-wrap select {
     background: rgba(0,0,0,0.05);
     border-color: rgba(0,0,0,0.2);
     color: #111;
 }
 
-body.light-mode .select-wrap select option {
+body.svijetliNacin .select-wrap select option {
     background: #f5f5f5;
     color: #111;
 }
 
-body.light-mode .field label {
+body.svijetliNacin .field label {
     color: #555;
 }
 
-body.light-mode #btnReset {
+body.svijetliNacin #btnReset {
     background: rgba(0,0,0,0.08);
     color: #333;
     border-color: rgba(0,0,0,0.15);
 }
 
-body.light-mode #btnReset:hover {
+body.svijetliNacin #btnReset:hover {
     background: rgba(0,0,0,0.15);
     color: #111;
 }
