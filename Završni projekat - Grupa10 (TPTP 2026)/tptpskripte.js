@@ -238,67 +238,114 @@ if (filterDugmica.length > 0) {
 
 }
 
-/*Ovo neće raditi za različite veličine monitora, ili na mobilnim uređajima. Makar ne trenutno. */
+/*Ovo neće raditi za različite veličine monitora, ili na mobilnim uređajima. */
 
-const kinoModal = document.getElementById('kinoModal');
+const kinoZones = document.querySelector('.zone-popcorn');
 
-if (kinoModal) {
-
-    const kinoModalTitle = document.getElementById('kinoModalTitle');
-    const kinoModalDesc = document.getElementById('kinoModalDesc');
-    const kinoModalUrl = document.getElementById('kinoModalUrl');
-    const kinoCloseBtn = document.getElementById('kinoCloseBtn');
-    const kinoGoBtn = document.getElementById('kinoGoBtn');
-
-    const kinoInfo = {
+if (kinoZones) {
+    const zones = {
         popcorn: {
-            title: 'Kokice',
-            desc: 'Kokice su nezaobilazan dio kino iskustva',
+            emoji: '🍿',
+            title: 'Kokice (Popcorn)',
+            desc: 'Popularna grickalica napravljena od prženih zrna kukuruza.',
             url: 'https://www.popcorn.org/'
         },
         cola: {
-            title: 'Cola',
-            desc: 'Osvježavajući napitak uz omiljeni film',
+            emoji: '🥤',
+            title: 'Coca-Cola',
+            desc: 'Najpoznatije gazirano bezalkoholno piće na svijetu.',
             url: 'https://www.coca-cola.com/ba/bs/brands/coca-cola'
         },
         karte: {
-            title: 'Ulaznice',
-            desc: 'Bez ulaznice nema filma',
+            emoji: '🎟️',
+            title: 'Kino karte',
+            desc: 'Ulaznica je dokaz plaćene kinoprojekcije.',
             url: 'https://cinestarcinemas.ba/tuzla-bingo-city-center'
         }
     };
 
-    document.querySelectorAll('area[data-type]').forEach(area => {
-        area.addEventListener('click', function(e) {
-            e.preventDefault(); 
+    var pendingUrl = '';
+    var tooltip = document.getElementById('tooltip');
+    var modalBackdrop = document.getElementById('modalBackdrop');
 
-            const tip = this.getAttribute('data-type');
-            const podaci = kinoInfo[tip];
+    function showTip(e, key) {
+        var d = zones[key];
+        document.getElementById('tipIcon').textContent = d.emoji;
+        document.getElementById('tipTitle').textContent = d.title;
+        document.getElementById('tipDesc').textContent = d.desc;
+        tooltip.classList.add('visible');
+        moveTip(e);
+    }
 
-            kinoModalTitle.innerText = podaci.title;
-            kinoModalDesc.innerText = podaci.desc;
-            kinoModalUrl.href = podaci.url;
-            kinoModalUrl.innerText = podaci.url;
+    function moveTip(e) {
+        var x = e.clientX + 16;
+        var y = e.clientY + 16;
+        var tw = tooltip.offsetWidth || 240;
+        var th = tooltip.offsetHeight || 120;
+        if (x + tw > window.innerWidth - 10) x = e.clientX - tw - 10;
+        if (y + th > window.innerHeight - 10) y = e.clientY - th - 10;
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+    }
 
-            kinoModal.style.display = 'flex';
-        });
+    document.addEventListener('mousemove', function(e) {
+        if (tooltip.classList.contains('visible')) moveTip(e);
     });
 
-    kinoCloseBtn.addEventListener('click', function() {
-        kinoModal.style.display = 'none';
+    function hideTip() {
+        tooltip.classList.remove('visible');
+    }
+
+    function confirmLink(key) {
+        hideTip();
+        var d = zones[key];
+        pendingUrl = d.url;
+        document.getElementById('modalEmoji').textContent = d.emoji;
+        document.getElementById('modalTitle').textContent = d.title;
+        document.getElementById('modalDesc').textContent = d.desc;
+        document.getElementById('modalUrl').textContent = d.url;
+        document.getElementById('modalUrl').href = d.url;
+        modalBackdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modalBackdrop.classList.remove('open');
+        document.body.style.overflow = '';
+        pendingUrl = '';
+    }
+
+    function goToLink() {
+        if (pendingUrl) window.open(pendingUrl, '_blank', 'noopener,noreferrer');
+        closeModal();
+    }
+
+    document.getElementById('zonePopcorn').addEventListener('click', function() { confirmLink('popcorn'); });
+    document.getElementById('zoneCola').addEventListener('click', function() { confirmLink('cola'); });
+    document.getElementById('zoneKarte').addEventListener('click', function() { confirmLink('karte'); });
+
+    document.getElementById('zonePopcorn').addEventListener('mouseenter', function(e) { showTip(e, 'popcorn'); });
+    document.getElementById('zoneCola').addEventListener('mouseenter', function(e) { showTip(e, 'cola'); });
+    document.getElementById('zoneKarte').addEventListener('mouseenter', function(e) { showTip(e, 'karte'); });
+
+    document.getElementById('zonePopcorn').addEventListener('mouseleave', hideTip);
+    document.getElementById('zoneCola').addEventListener('mouseleave', hideTip);
+    document.getElementById('zoneKarte').addEventListener('mouseleave', hideTip);
+
+    document.getElementById('legendPopcorn').addEventListener('click', function() { confirmLink('popcorn'); });
+    document.getElementById('legendCola').addEventListener('click', function() { confirmLink('cola'); });
+    document.getElementById('legendKarte').addEventListener('click', function() { confirmLink('karte'); });
+
+    document.getElementById('btnCancel').addEventListener('click', closeModal);
+    document.getElementById('btnGo').addEventListener('click', goToLink);
+
+    modalBackdrop.addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
     });
 
-    kinoGoBtn.addEventListener('click', function() {
-        window.open(kinoModalUrl.href, '_blank');
-        kinoModal.style.display = 'none';
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
     });
-
-    kinoModal.addEventListener('click', function(e) {
-        if (e.target === kinoModal) {
-            kinoModal.style.display = 'none';
-        }
-    });
-
 }
 const galerija = document.querySelector('.gallery-grid');
 
