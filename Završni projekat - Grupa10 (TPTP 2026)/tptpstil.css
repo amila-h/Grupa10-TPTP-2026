@@ -1890,9 +1890,14 @@ body.svijetliNacin .search input::placeholder {
     color: #555;
 }
 
+body.svijetliNacin .banner::before {
+    background: rgba(255, 255, 255, 0.3);
+}
 
-
-
+body.svijetliNacin .premijera-sekcija::before {
+    background: rgba(0, 0, 0, 0.7);
+}
+ 
 
 body.svijetliNacin .film-card {
     background: #fff;
