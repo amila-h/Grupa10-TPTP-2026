@@ -24,6 +24,8 @@ const ViseInformacijaOFilmu = document.getElementById('ViseInformacijaOFilmu');
 const PopupGodina = document.getElementById('PopupGodina');    
 const PopupDob = document.getElementById('PopupDob');          
 const PopupTrajanje = document.getElementById('PopupTrajanje');
+const PopupPrviZanr = document.getElementById('PopupPrviZanr');
+const PopupDrugiZanr = document.getElementById('PopupDrugiZanr');
 
 const TrakaKretanjaFilmova = document.getElementById('slider'); 
 const DugmeLijevo = document.getElementById('prev');   
@@ -67,6 +69,8 @@ KarticeFilmova.forEach(kartica => {
         PopupGodina.innerText = godina;           
         PopupDob.innerText = dob;                 
         PopupTrajanje.innerText = trajanje;
+        PopupPrviZanr.innerText = PrviZanr;
+        PopupDrugiZanr.innerText = DrugiZanr;
     });
 });
 
@@ -93,6 +97,27 @@ DugmeLijevo.addEventListener('click', () => {
     const zadnjiPosterFilmova = posteriFilmova[posteriFilmova.length - 1];
     TrakaKretanjaFilmova.prepend(zadnjiPosterFilmova);
 });
+}
+
+const timer = document.getElementById('timer');
+
+if (timer) {
+  const premijeraFilma = new Date('November 24, 2027 00:00:00');
+
+  setInterval(() => {
+    const sada = new Date();
+    const vrijemeDo = premijeraFilma - sada;
+
+    const dani = Math.floor(vrijemeDo / (1000 * 60 * 60 * 24));
+    const sati = Math.floor((vrijemeDo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((vrijemeDo % (1000 * 60 * 60)) / (1000 * 60));
+    const sekunde = Math.floor((vrijemeDo % (1000 * 60)) / 1000);
+
+    timer.innerHTML = `
+        <span>${dani}d</span>
+        <span>${sati}h</span>
+        <span>${minute}m</span>
+        <span>${sekunde}s</span>`;}, 1000);
 }
 
 /*Kraj js za index.html stranicu */
