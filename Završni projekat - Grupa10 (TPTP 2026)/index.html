@@ -128,7 +128,20 @@
                                 U poslijeratnom periodu zalagao se za međunarodnu kontrolu nuklearnog oružja što ga je dovelo u sukob s vlastima. Film kulminira dramatičnim saslušanjem 1954. koje mu je oduzelo sigurnosnu dozvolu.
                                 Film je osvojio sedam Oscara, uključujući za Najbolji film."
 >       
-            <img src="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.jpg" alt="Oppenheimer">
+            <picture>
+                        <!-- WebP format za moderne browsere — manji fajl, bolja kompresija -->
+                        <source
+                            srcset="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.webp"
+                            type="image/webp">
+                        <!-- AVIF format za najnovije browsere — najbolja kompresija -->
+                        <source
+                            srcset="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.avif"
+                            type="image/avif">
+                        <!-- Fallback — originalni JPG ako browser ne podržava gornje formate -->
+                        <img
+                            src="./Fotografije za projekat/Filmovi - posteri/Biografija/Oppenheimer.jpg"
+                            alt="Oppenheimer — biografski film o ocu atomske bombe, 2023">
+                    </picture>
         </div>
 
         <div class="movie-card" 
