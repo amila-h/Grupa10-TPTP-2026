@@ -574,10 +574,6 @@ aside{
 }
 
 
-.DodatanPopupFilma[style*="display: block"] {
-    display: flex !important;
-}
-
 .DodatanPopupFilma.active {
     display: flex;
 }
@@ -1834,12 +1830,19 @@ aside{
     box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
 }
 
+#theme-icon {
+    display: block;
+}
+
 #theme-icon-light {
     display: none;
 }
 
-#theme-icon {
-    display: block;
+#theme-icon-dark {
+    display: none;
+}
+#theme-icon-light-dark {
+    display: none;
 }
 
 body.svijetliNacin #theme-icon {
@@ -1847,7 +1850,18 @@ body.svijetliNacin #theme-icon {
 }
 
 body.svijetliNacin #theme-icon-light {
+    display: none;
+}
+
+body.svijetliNacin #theme-icon-dark {
+    display: none;
+}
+body.svijetliNacin #theme-icon-light-dark {
     display: block;
+}
+
+body.svijetliNacin #theme-btn {
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
 body.svijetliNacin {
@@ -1855,6 +1869,17 @@ body.svijetliNacin {
     color: #111;
 }
 
+body.svijetliNacin .nav li a {
+    color: #111;
+}
+
+body.svijetliNacin .nav li a:hover {
+    color: var(--primary-color);
+}
+ 
+body.svijetliNacin .menu-toggle {
+    color: #111;
+}
 
 body.svijetliNacin .search input {
     color: #111;
@@ -2074,6 +2099,26 @@ body.svijetliNacin #btnReset {
 body.svijetliNacin #btnReset:hover {
     background: rgba(0,0,0,0.15);
     color: #111;
+}
+
+body.svijetliNacin .premijera-sekcija h2,
+body.svijetliNacin .premijera-sekcija h3,
+body.svijetliNacin .premijera-sekcija p {
+    color: white;
+}
+
+body.svijetliNacin .section-wrap {
+    color: #111;
+}
+
+body.svijetliNacin .logo {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+ 
+body.svijetliNacin .logo img {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Prilagodba za mobilne uredaje */
@@ -2400,4 +2445,45 @@ body.svijetliNacin #btnReset:hover {
     .side-menu {
         width: 200px;
     }
+}
+
+/*Koristen AI za ovaj dio koda - pri klikom na dark mode pojavljuju se bijele ikonice, a za light mode tamno plave.
+Takodjer, znam sada da prvi dio koda sluzi da za svaku sliku koja sadrzi tekst PlaviSVG (*= znaci sadrzi), da ih sakrije jer je po defaultu ukljucen tamni mod.
+Time prikazujemo sve bijele ikone.
+Drugi dio je za ikonu teme, prvo sakrijemo sve 4, zatim se odvojeno prikaze bijeli mjesec.
+body.svijetliNacin img - kada korisnik klikne na dugme za temu js dodaje klasu svijetliNacin na body, primjene se pravila
+da se bijele ikone skrivaju plave prikazuju. ispod toga je kod na istom principu kao ranije. */
+
+img[src*="PlaviSVG"] {
+    display: none;
+}
+img[src*="BijeliSVG"] {
+    display: inline;
+}
+
+
+#theme-icon,
+#theme-icon-light,
+#theme-icon-dark,
+#theme-icon-light-dark {
+    display: none;
+}
+#theme-icon {
+    display: block;
+}
+
+body.svijetliNacin img[src*="BijeliSVG"] {
+    display: none;
+}
+body.svijetliNacin img[src*="PlaviSVG"] {
+    display: inline;
+}
+
+body.svijetliNacin #theme-icon-light-dark {
+    display: block;
+}
+body.svijetliNacin #theme-icon,
+body.svijetliNacin #theme-icon-light,
+body.svijetliNacin #theme-icon-dark {
+    display: none;
 }
