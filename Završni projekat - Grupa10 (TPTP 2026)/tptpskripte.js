@@ -452,3 +452,21 @@ if (searchInput) {
     }
   });
 }
+
+const DugmeZaDanNoc = document.getElementById('theme-btn');
+
+if (DugmeZaDanNoc) {
+    const odabraniNacin = localStorage.getItem('nacin');
+    if (odabraniNacin === 'svijetli') {
+        document.body.classList.add('svijetliNacin');
+    }
+    
+    DugmeZaDanNoc.addEventListener('click', function() {
+        document.body.classList.toggle('svijetliNacin');
+        if (document.body.classList.contains('svijetliNacin')) {
+            localStorage.setItem('nacin', 'svijetli');
+        } else {
+            localStorage.setItem('nacin', 'tamni');
+        }
+    });
+}
