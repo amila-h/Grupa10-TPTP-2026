@@ -10,6 +10,10 @@
     --primary-color: #ff0404a4;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
    background-color: #111; 
     font-family:'Poppins', sans-serif;
@@ -30,7 +34,6 @@ header{
     padding: 20px 80px;
     z-index: 1000;
     transition: 0.5s;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .logo{
@@ -39,31 +42,31 @@ header{
     justify-content: center;
     width: 100px;
     aspect-ratio: 1 / 1;
-    padding: 12px;
+    border-radius: 10%;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
     overflow: hidden;
 }
 
 .logo img{
-    width: 140px !important;
-    height: 180px;
+    width: 100% !important;
+    height: 100%;
     display: block;
     object-fit: contain;
-    border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(0, 0, 0, 0.85);
 }
 
 .logo:hover{
     box-shadow: 0 0 30px var(--primary-color);
+    transform: scale(1.05);
+    transition: 0.3s ease;
 }
 
 .nav{
     display: flex;
-    
+    transition: top 0.3s ease-in-out;
 }
 
 
@@ -1682,6 +1685,8 @@ aside{
         width: 100%;
  }
 
+/* Prilagodba za mobilne uredaje */
+
 @media (max-width: 1024px) {
     header {
         padding: 20px 40px;
@@ -1729,7 +1734,11 @@ aside{
 
 @media (max-width: 768px) {
     header {
-        padding: 15px 20px;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        display:none !important;
     }
 
     .nav {
@@ -1737,7 +1746,8 @@ aside{
     }
 
     .search {
-        width: 150px;
+        max-width: 150px;
+        margin-left: auto;
     }
 
     .banner {
@@ -1819,15 +1829,38 @@ aside{
         font-size: 13px;
     }
 
+    .pozadina-preko-ekrana-popup,
+    .DodatanPopupFilma,
+    .kino-modal-backdrop {
+        padding: 20px;
+        align-items: center;
+}
+
     #popup-sadrzajweb-pravokutnik {
         padding: 20px;
         max-width: 95%;
+        width: 95%;
+        max-height: 80vh;
+        overflow-y: auto;
+        gap: 8px;
     }
+
+    #popup-sadrzajweb-pravokutnik h3 {
+       font-size: 18px;
+    }
+
+    #popup-sadrzajweb-pravokutnik [data-sinopsis] {
+        font-size: 13px;
+    }    
 
     .PopupSadrzaj {
         padding: 20px;
-        max-width: 95%;
+        max-width: 100%;
+        width: 95%;
+        max-height: 80vh;
+        overflow-y: auto;
     }
+    
 
     .container {
         padding: 100px 20px 40px;
@@ -1850,11 +1883,12 @@ aside{
     }
 
     .logo {
-        width: 70px;
+        display:none !important;
     }
 
     .search {
         width: 120px;
+        position: left 0;
     }
 
     .search input {
