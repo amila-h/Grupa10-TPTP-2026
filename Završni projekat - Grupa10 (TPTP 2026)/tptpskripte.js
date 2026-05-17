@@ -97,6 +97,22 @@ DugmeLijevo.addEventListener('click', () => {
     const zadnjiPosterFilmova = posteriFilmova[posteriFilmova.length - 1];
     TrakaKretanjaFilmova.prepend(zadnjiPosterFilmova);
 });
+
+/*Za embeded film */
+const videoDugme = document.getElementById('video-toggle');
+const videoOkvir = document.getElementById('video-embed-box');
+
+if (videoDugme && videoOkvir) {
+    videoOkvir.style.display = 'none';
+    videoDugme.addEventListener('click', function() {
+        if (videoOkvir.style.display === 'none') {
+            videoOkvir.style.display = 'block';
+        } else {
+            videoOkvir.style.display = 'none';
+        }
+    });
+}
+
 }
 
 const timer = document.getElementById('timer');
@@ -435,4 +451,22 @@ if (searchInput) {
       }
     }
   });
+}
+
+const DugmeZaDanNoc = document.getElementById('theme-btn');
+
+if (DugmeZaDanNoc) {
+    const odabraniNacin = localStorage.getItem('nacin');
+    if (odabraniNacin === 'svijetli') {
+        document.body.classList.add('svijetliNacin');
+    }
+    
+    DugmeZaDanNoc.addEventListener('click', function() {
+        document.body.classList.toggle('svijetliNacin');
+        if (document.body.classList.contains('svijetliNacin')) {
+            localStorage.setItem('nacin', 'svijetli');
+        } else {
+            localStorage.setItem('nacin', 'tamni');
+        }
+    });
 }
