@@ -155,7 +155,42 @@ if (sveKarticeFilmova.length > 0 && pozadinaVanPopupa && pravokutnik) {
             pozadinaVanPopupa.classList.remove('aktivno'); 
         }
     });
- 
+}
+
+/* Ovaj dio koda za search naredbu je uradio ClaudeAI.
+Razumijem da uzima lokaciju od sadrzaj.html da odvede korisnika na tu stranicu svaki put kada nesto ukuca u pretraživač. (To se nalazi na kraju js koda.)
+Ovo toLowerCase znaci da su mu sva slova koja korisnik unesa da li bila mala ili velika ista, 
+tako da bi mu prikazao film iako korisnik upise npr. oppenheimer umjesto Oppenheimer. 
+Također, razumijem da ispisuje poruku Nema informacija ako nije našao da se poklopio naziv nekog filma sa pretragom, 
+te da kada se klikne na neko dugme za filter žanrova da ta poruka nestaje, a filmovi ponovo postanu vidljivi korisniku.*/
+
+const urlParametri = new URLSearchParams(window.location.search);
+const pretragaTermin = urlParametri.get('pretraga');
+
+if (pretragaTermin && sveKarticeFilmova.length > 0) {
+  const terminMalo = pretragaTermin.toLowerCase();
+  let nadjen = false;
+
+  sveKarticeFilmova.forEach(kartica => {
+    const naslov = kartica.querySelector('h3').innerText.toLowerCase();
+    if (naslov.includes(terminMalo)) {
+      kartica.style.display = 'block';
+      nadjen = true;
+    } else {
+      kartica.style.display = 'none';
+    }
+  });
+
+  if (!nadjen) {
+    const poruka = document.createElement('p');
+    poruka.id = 'nema-rezultata';
+    poruka.textContent = 'Nema informacija';
+    poruka.style.color = 'white';
+    poruka.style.fontSize = '24px';
+    poruka.style.textAlign = 'center';
+    poruka.style.marginTop = '50px';
+    document.getElementById('sec-filmoteka').appendChild(poruka);
+  }
 }
 
 const filterDugmica = document.querySelectorAll('.filter-btn');
@@ -167,6 +202,9 @@ if (filterDugmica.length > 0) {
 
             filterDugmica.forEach(d => d.classList.remove('active'));
             this.classList.add('active');
+
+      const poruka = document.getElementById('nema-rezultata');
+      if (poruka) poruka.remove();
 
             const odabraniFilter = this.getAttribute('data-filter');
 
@@ -386,3 +424,15 @@ if (document.querySelector('form[action="#"]')) {
   });
 }
 /*Kraj js za kontakt.html stranicu */
+const searchInput = document.querySelector('.search input');
+
+if (searchInput) {
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const vrijednost = this.value.trim();
+      if (vrijednost !== '') {
+        window.location.href = `sadrzaj.html?pretraga=${encodeURIComponent(vrijednost)}`;
+      }
+    }
+  });
+}
