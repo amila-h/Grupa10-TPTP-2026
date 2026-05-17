@@ -187,7 +187,11 @@ header{
 }
 
 .content.active{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 80vh;
+    overflow: visible;
     visibility: visible;
     transform: scale(1);
     transition: 0.5s;
@@ -233,7 +237,7 @@ header{
 
 .banner .content p{
     color:white;
-    margin: 10px 0 20px;
+    margin: 6px 0 8px;
     font-size: 1em;
     font-weight: 300;
     line-height: 1.5em;
@@ -241,7 +245,7 @@ header{
 }
 
 aside{
-    margin-top: 10px;
+    margin-top: 0px;
     width: 100%;
     background: transparent;
     color: white;
@@ -262,6 +266,7 @@ aside{
 
 .banner .content .button{
     position: relative;
+    margin-top:8px;
 }
 
 .banner .content .button a{
@@ -361,7 +366,7 @@ aside{
 
 .play-trailer{
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 100px;
     display: inline-flex;
     align-items: center;
@@ -656,9 +661,10 @@ aside{
 }
 
 #video-widget {
-    margin-top: 15px;
+    margin-top: 8px;
+    margin-bottom: 0px;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 #video-toggle {
@@ -1800,7 +1806,283 @@ aside{
     text-align: center;
 }
 
-   
+/*Light/dark mode*/
+
+#theme-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+#theme-btn:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+#theme-icon-light {
+    display: none;
+}
+
+#theme-icon {
+    display: block;
+}
+
+body.light-mode #theme-icon {
+    display: none;
+}
+
+body.light-mode #theme-icon-light {
+    display: block;
+}
+
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+
+body.light-mode .nav li a {
+    color: #111;
+}
+
+body.light-mode .search input {
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .search input::placeholder {
+    color: #555;
+}
+
+body.light-mode .banner::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body.light-mode .banner .content p {
+    color: #111;
+}
+
+body.light-mode .banner .content h4 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .banner .content span {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .film-card {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+body.light-mode .film-card-info {
+    background: #f5f5f5;
+}
+
+body.light-mode .film-card-info h3 {
+    color: #111;
+}
+
+body.light-mode .film-card-meta {
+    color: #555;
+}
+
+body.light-mode .film-card-genre {
+    background: rgba(0,0,0,0.08);
+    color: #444;
+}
+
+body.light-mode .filter-bar {
+    background: linear-gradient(to bottom, rgba(240,240,240,0.95), transparent);
+}
+
+body.light-mode .filter-btn {
+    background: rgba(0, 0, 0, 0.08);
+    color: #111;
+    border-color: rgba(0,0,0,0.15);
+}
+
+body.light-mode .section-heading {
+    color: #111;
+}
+
+body.light-mode .film-table {
+    background: rgba(255,255,255,0.8);
+    color: #333;
+}
+
+body.light-mode .film-table th {
+    background: rgba(0,0,0,0.08);
+    color: #111;
+}
+
+body.light-mode .film-table td {
+    color: #333;
+}
+
+body.light-mode .nested-list > li {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.08);
+}
+
+body.light-mode .nested-list > li > span {
+    color: #111;
+}
+
+body.light-mode .nested-list ul li {
+    color: #333;
+}
+
+body.light-mode .nested-list ul ul li {
+    color: #555;
+}
+
+body.light-mode .footer {
+    background: #e0e0e0;
+    border-top-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .footer p {
+    color: #444;
+}
+
+body.light-mode .footer-authors {
+    color: #333;
+}
+
+body.light-mode .footer-socials a {
+    background: #ccc;
+    color: #111;
+}
+
+body.light-mode .side-menu {
+    background: rgba(240,240,240,0.98);
+}
+
+body.light-mode .side-menu a {
+    color: #111;
+}
+
+body.light-mode .PopupSadrzaj,
+body.light-mode #popup-sadrzajweb-pravokutnik {
+    background: #fff;
+    color: #111;
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .PopupPodaci {
+    color: #444;
+}
+
+body.light-mode #DuziOpisFilma,
+body.light-mode #popup-sadrzajweb-pravokutnik [data-sinopsis] {
+    color: #333;
+}
+
+body.light-mode .kino-modal-box {
+    background: #fff;
+    color: #111;
+}
+
+body.light-mode .kino-modal-box p {
+    color: #444;
+}
+
+body.light-mode #video-toggle {
+    background: rgba(0,0,0,0.08);
+    color: #111;
+    border-color: rgba(0,0,0,0.15);
+}
+
+body.light-mode .premijera-sekcija::before {
+    background: rgba(255,255,255,0.4);
+}
+
+body.light-mode .back-to-top {
+    color: #555;
+}
+
+body.light-mode .bookmark-nav a {
+    background: rgba(0,0,0,0.08);
+    color: #333;
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .container {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .form {
+    background: #fff;
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .contact-info {
+    background: linear-gradient(135deg, #8b0000, #cc0000);
+}
+
+body.light-mode .contact-info .title {
+    color: #fff;
+}
+
+body.light-mode .contact-info .text {
+    color: rgba(255,255,255,0.85);
+}
+
+body.light-mode .information p {
+    color: rgba(255,255,255,0.9);
+}
+
+body.light-mode .contact-form {
+    background: #f5f5f5;
+}
+
+body.light-mode .contact-form .title {
+    color: #111;
+}
+
+body.light-mode .input-container .input {
+    color: #111;
+    border-bottom-color: rgba(0,0,0,0.25);
+}
+
+body.light-mode .input-container label {
+    color: #555;
+}
+
+body.light-mode .select-wrap select {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.2);
+    color: #111;
+}
+
+body.light-mode .select-wrap select option {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body.light-mode .field label {
+    color: #555;
+}
+
+body.light-mode #btnReset {
+    background: rgba(0,0,0,0.08);
+    color: #333;
+    border-color: rgba(0,0,0,0.15);
+}
+
+body.light-mode #btnReset:hover {
+    background: rgba(0,0,0,0.15);
+    color: #111;
+}
 
 /* Prilagodba za mobilne uredaje */
 
@@ -2034,10 +2316,12 @@ aside{
 
     .banner .content h4 {
         font-size: 14px;
+        margin-bottom: 5px;
     }
 
     .banner .content p {
         font-size: 13px;
+        margin: 6px 0 10px;
     }
 
     .movie-card {
