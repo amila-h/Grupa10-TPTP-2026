@@ -194,7 +194,7 @@ if (kinoModal) {
             e.preventDefault(); 
 
             const tip = this.getAttribute('data-type');
-            const podaci = kinoData[tip];
+            const podaci = kinoInfo[tip];
 
             kinoModalTitle.innerText = podaci.title;
             kinoModalDesc.innerText = podaci.desc;
@@ -267,4 +267,97 @@ if (dugme && meni) {
 
 /*Početak js za kontakt.html stranicu */
 
+/* Ovaj dio js koda za validaciju korisnikovog unosa prije slanja podataka sam iskopirala sa prezentacije broj 9,
+slide broj 25. Izmjenila sam nazive, s obzirom da u html-u nisu korišteni isti nazivi kao na prezentaciji, 
+ali sam i dodala dodatne linije koda po uzoru na prezentaciju, za ona polja koja ne postoje na prezentaciji.
+Također, dodano je da za tekst koji govori korisniku što mora unijeti ili promjeniti da
+se pojavi tek onda kada korisnik klikne na dugme "Pošalji poruku" u slučaju da nije ukucao ispravne podatke.
+Također, dodan je ovaj if kao i u drugim dijelovima koda, jer radimo sa jednom js datotekom, a više html datoteka.
+I da se izbriše sve što je korisnik pisao kada pošalje poruku uspješno.*/
+
+const emailRegex = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i;
+
+if (document.querySelector('form[action="#"]')) {
+  document.querySelector('form[action="#"]').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let validan = true;
+
+    const svaPolja = [
+      { id: 'ime', errId: 'imeErr', poruka: 'Ime je obavezno!' },
+      { id: 'prezime', errId: 'prezimeErr', poruka: 'Prezime je obavezno!' },
+      { id: 'email', errId: 'emailErr', poruka: 'Neispravan email!', regex: emailRegex },
+      { id: 'poruka', errId: 'porukaErr', poruka: 'Poruka mora imati najmanje 10 karaktera!', regex: /^.{10,}$/ },
+    ];
+
+    svaPolja.forEach(({ id, errId, poruka, regex }) => {
+      const polje  = document.getElementById(id);
+      const greska = document.getElementById(errId);
+
+      if (!polje.value.trim() || (regex && !regex.test(polje.value.trim()))) {
+        greska.textContent = poruka;
+        greska.style.display = 'block';
+        polje.classList.add('polje-greska');
+        validan = false;
+      } 
+      else {
+        greska.textContent = '';
+        greska.style.display = 'none';
+        polje.classList.remove('polje-greska');
+      }
+    });
+
+    const polje = document.getElementById('telefon');
+    const greska = document.getElementById('phoneErr');
+    const vrijednostBrojeva = /^\+?[\d]{9,15}$/; 
+    const samoSlova = /[^\d\+]/; 
+
+    if (!polje.value.trim()) {
+      greska.textContent = 'Telefon je obavezan';
+      greska.style.display = 'block';
+      polje.classList.add('polje-greska');
+      validan = false;
+    } 
+    else if (samoSlova.test(polje.value.trim())) {
+      greska.textContent = 'Mogu se unositi samo brojevi';
+      greska.style.display = 'block';
+      polje.classList.add('polje-greska');
+      validan = false;
+    } 
+    else if (!vrijednostBrojeva.test(polje.value.trim())) {
+      greska.textContent = 'Broj telefona mora imati najmanje 9 cifri';
+      greska.style.display = 'block';
+      polje.classList.add('polje-greska');
+      validan = false;
+    } 
+    else {
+      greska.textContent = '';
+      greska.style.display = 'none';
+      polje.classList.remove('polje-greska');
+    }
+
+    const tema = document.getElementById('tema');
+    const temaGreska = document.getElementById('temaErr');
+
+    if (!tema.value) {
+      temaGreska.textContent = 'Molimo odaberite temu upita.';
+      temaGreska.style.display = 'block';
+
+      validan = false;
+
+    } 
+    else {
+      temaGreska.textContent = '';
+      temaGreska.style.display = 'none';
+    }
+
+    if (validan) {
+
+      const ime = document.getElementById('ime').value.trim();
+
+      document.getElementById('successMsg').textContent = `Hvala, ${ime}! Poruka je poslana.`;
+      document.querySelector('form[action="#"]').reset();
+    }
+  });
+}
 /*Kraj js za kontakt.html stranicu */
