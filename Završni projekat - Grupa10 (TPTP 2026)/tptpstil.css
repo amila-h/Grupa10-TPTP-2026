@@ -27,7 +27,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 80px;
+    padding: 20px 80px;
     z-index: 1000;
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.2);
@@ -349,6 +349,11 @@ aside{
     transition: 0.3s;
 }
 
+.more img{
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
 .play-trailer{
     position: absolute;
     bottom: 50px;
@@ -451,6 +456,14 @@ aside{
     right: 10px;
 }
 
+.slide-btn img{
+    width: 40px;
+    height: 40px;
+    border: none;
+    transition: 0.3S ease;
+    vertical-align: middle; 
+}
+
 .sci{
     position: absolute;
     bottom: 50px;
@@ -490,7 +503,7 @@ aside{
     z-index: 999;
 }
 
-.side-menu.active{
+.side-menu.otvoren{
     left: 0;
 }
 
@@ -526,6 +539,7 @@ aside{
 }
 
 .DodatanPopupFilma {
+    display:none;
     position: fixed;
     top: 0;
     left: 0;
@@ -533,7 +547,7 @@ aside{
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(8px);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -696,7 +710,7 @@ aside{
     z-index: 9999;
 }
 
-.pozadina-preko-ekrana-popup.active {
+.pozadina-preko-ekrana-popup.aktivno {
     display: flex;
 }
 
@@ -771,7 +785,7 @@ aside{
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    padding: 120px 40px 30px; 
+    padding: 140px 40px 30px; 
     background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
 
@@ -787,7 +801,12 @@ aside{
     transition: all 0.3s ease;
 }
 
-.filter-btn:hover, 
+.filter-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+ 
 .filter-btn.active {
     background: var(--primary-color); 
     border-color: var(--primary-color);
@@ -915,6 +934,34 @@ aside{
     margin-right: 5px;
 }
 
+#galerija-pozadina {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+#galerija-pozadina.aktivno {
+    display: flex;
+}
+
+#galerija-pozadina img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: default;
+}
 
 .kino-wrapper {
     position: absolute;
@@ -935,7 +982,7 @@ aside{
     color: #fff;
     font-size: 13px;
     z-index: 100;
-    display: none; /* Pali se preko JS-a */
+    display: none; 
     pointer-events: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     max-width: 220px;
@@ -1203,6 +1250,7 @@ aside{
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 5px;
+    color: var(--primary-color);
 }
 
 .footer p {
@@ -1630,7 +1678,157 @@ aside{
     text-align: center;
 }
 
+   .contact-form {
+        width: 100%;
+ }
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 120px 40px 40px;
+        gap: 30px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .movie-title {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .banner .carousel-box {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .play-trailer {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .sci {
+        position: static;
+        justify-content: flex-start;
+        padding: 0 40px 40px;
+    }
+
+    .section-wrap {
+        padding: 6px 40px 40px;
+    }
+
+    .movies-grid {
+        padding: 20px 40px;
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .search {
+        width: 150px;
+    }
+
+    .banner {
+        padding: 100px 20px 40px;
+    }
+
+    .banner .content h4 {
+        font-size: 18px;
+        flex-wrap: wrap;
+    }
+
+    .movie-slider {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .movie-card {
+        width: 160px;
+        height: 240px;
+    }
+
+    .filter-bar {
+        padding: 90px 20px 20px;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .section-wrap {
+        padding: 6px 20px 30px;
+    }
+
+    .movies-grid {
+        padding: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .film-card img {
+        height: 220px;
+    }
+
+    .film-card-overlay {
+        height: 220px;
+    }
+
+    .film-table {
+        font-size: 11px;
+    }
+
+    .film-table th,
+    .film-table td {
+        padding: 8px 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .section-heading {
+        font-size: 18px;
+    }
+
+    .sci {
+        padding: 0 20px 30px;
+        gap: 15px;
+    }
+
+    .bookmark-nav {
+        right: 8px;
+    }
+
+    .bookmark-nav a {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    #popup-sadrzajweb-pravokutnik {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .PopupSadrzaj {
+        padding: 20px;
+        max-width: 95%;
+    }
+
     .container {
         padding: 100px 20px 40px;
     }
@@ -1642,5 +1840,117 @@ aside{
     .contact-info,
     .contact-form {
         width: 100%;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .search {
+        width: 120px;
+    }
+
+    .search input {
+        font-size: 12px;
+    }
+
+    .banner .content h4 {
+        font-size: 14px;
+    }
+
+    .banner .content p {
+        font-size: 13px;
+    }
+
+    .movie-card {
+        width: 130px;
+        height: 200px;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .film-card img {
+        height: 180px;
+    }
+
+    .film-card-overlay {
+        height: 180px;
+    }
+
+    .film-card-info h3 {
+        font-size: 13px;
+    }
+
+    .filter-bar {
+        padding: 80px 10px 15px;
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    .section-wrap {
+        padding: 6px 15px 20px;
+    }
+
+    .section-heading {
+        font-size: 16px;
+    }
+
+    .film-table th,
+    .film-table td {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-grid img {
+        height: 150px;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-authors {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .footer-authors span:not(:last-child)::after {
+        display: none;
+    }
+
+    .kino-modal-box {
+        padding: 20px 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .side-menu {
+        width: 200px;
     }
 }
